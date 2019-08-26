@@ -343,7 +343,7 @@ function Jostle:Refresh(...)
 		frames = blizzardFrames
 	end
 
-	if inCombat or not HasFullControl() and not UnitHasVehicleUI("player") then
+	if inCombat or not HasFullControl() then
 		for _,frame in ipairs(frames) do
 			if type(frame) == "string" then
 				frame = _G[frame]
