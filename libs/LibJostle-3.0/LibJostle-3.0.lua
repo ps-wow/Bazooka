@@ -42,7 +42,6 @@ local blizzardFrames = {
 	'FramerateLabel',
 	'DurabilityFrame',
 	'CastingBarFrame',
-	'OrderHallCommandBar',
 	'MicroButtonAndBagsBar',
 	'UIWidgetTopCenterContainerFrame',
 }
@@ -470,9 +469,6 @@ function Jostle:Refresh(...)
 								x = x - MultiBarLeft:GetWidth() * MultiBarLeft:GetScale()
 							end
 						end
-					elseif frame == OrderHallCommandBar and OrderHallCommandBar:IsShown() then
-							anchorAlt = "TOPLEFT"
-							anchor = "TOPLEFT"
 					end
 					if frame == FramerateLabel then
 						anchorFrame = WorldFrame
@@ -482,10 +478,6 @@ function Jostle:Refresh(...)
 					blizzardFramesData[frame].lastX = frame:GetLeft()
 					blizzardFramesData[frame].lastY = frame:GetTop()
 					blizzardFramesData[frame].lastScale = framescale
-
-					if frame == OrderHallCommandBar then
-						frame:SetPoint("RIGHT", "UIParent" ,"RIGHT",0, 0);
-					end
 				end
 			end
 		end
